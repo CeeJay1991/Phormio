@@ -77,7 +77,6 @@ function setupHeaderButtons() {
 }
 
 function showHeader(showbuttons) {
-
   translate(0,offsetY);
 
   textFont(fontGotham);
