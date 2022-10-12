@@ -1,7 +1,7 @@
 
 function login() {
 
-var textinput1, textinput2;
+var textinput1, textinput2, textinput3, textinput4;
 var name;
 var gui;
 var b;
@@ -14,37 +14,37 @@ this.setup = function()
 {
 
   gui = createGui();
-  b = createButton("Log In", 50, 550);
+  b = createButton("Log In", width/4.2, height/1.35, width/2, height/14);
   // b = fill (100)
 
   textinput1 = createInput('');
-  textinput1.position(45, 287);
-  textinput1.size(170,40);
+  textinput1.position(width/7, height/4);
+  textinput1.size(width/3.5,height/14);
   textinput1.value('First name');
   //textinput.input(myInputEvent);
   
-    textinput2 = createInput('');
-  textinput2.position(230, 287);
-  textinput2.size(170,40);
+  textinput2 = createInput('');
+  textinput2.position(width/1.9, height/4);
+  textinput2.size(width/3.5,height/14);
   textinput2.value('Last name');
   //textinput.input(myInputEvent);
   
-  //     textinput = createInput('');
-  // textinput.position(45, 345);
-  // textinput.size(355,40);
-  // textinput.value('Username');
+  textinput3 = createInput('');
+  textinput3.position(width/7, height/2.7);
+  textinput3.size(width/1.5,height/14);
+  textinput3.value('Username');
+  // textinput3.input(myInputEvent);
+  
+  textinput4 = createInput('');
+  textinput4.position(width/7, height/2.05);
+  textinput4.size(width/1.5,height/14);
+  textinput4.value('Email Address');
   // textinput.input(myInputEvent);
   
-  //       textinput = createInput('');
-  // textinput.position(45, 400);
-  // textinput.size(355,40);
-  // textinput.value('Email Address');
-  // textinput.input(myInputEvent);
-  
-  //         textinput = createInput('');
-  // textinput.position(45, 460);
-  // textinput.size(355,40);
-  // textinput.value('Password');
+  textinput5 = createInput('');
+  textinput5.position(width/7, height/1.65);
+  textinput5.size(width/1.5,height/14);
+  textinput5.value('Password');
   // textinput.input()  = function() 
   // {        
   //   console.log('you are typing: ', this.value());
@@ -52,28 +52,30 @@ this.setup = function()
 }
 
 this.draw = function() {
-  background(220);
+  background(255);
 
   //top banner
-  fill(255);
+  fill(220);
   strokeWeight(0);
-  rect(0, 0, 440, 120);
+  rect(0, 0, 440, height/8);
 
   //footer
-  fill(255);
+  fill(220);
   strokeWeight(0);
-  rect(0, 680, 440, 120);
+  rect(0, height/1.1, 440, height/8);
 
   //middle
-  fill(255);
+  fill(220);
   strokeWeight(0);
-  rect(20, 150, 400, 500, 10);
+  rect(20, height/5, width/1.2, height/1.55, 10);
 
-  textSize(24);
+
+  textSize(10);
   fill(80);
   stroke(100);
-  strokeWeight(0);
-  text("Sign up for a free account", 55, 190, 200);
+  strokeWeight(1);
+  text("Sign up for a free account", width/10, height/6, width, 10);
+ 
 
   /*fill(255);
   strokeWeight(1);
@@ -129,6 +131,7 @@ this.draw = function() {
 
   if (b.isPressed) {
     print(b.label + " is pressed.");
+    me.sceneManager.showScene(homepage);
   }
 }
 
