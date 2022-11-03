@@ -1,75 +1,6 @@
 function posenet()
 {
-  var gui;
-  var menu = [];
-  var menuNames = ["Buttons", "Sliders", "Colour Control"];
-  var me = this;
-  var backButton;
-  var menuButton;
-
-  this.setup = function()  
-  {
-    gui = createGui();
-
-    showHeader(false);
-
-    var buttonstyleMenu = {
-        "font": 'gotham',
-        "textSize": 12,
-        "rounding": 0,
-        "strokeWeight": 1,
-        "fillBg": color('#4d4d4d'),
-        "fillBgHover": color('#4d4d4d'),
-        "fillLabel": color(255),
-        "fillLabelHover" : color(255)
-    }
-
-    var xoffset = 30;
-    var yoffset = 80;
-    var offset = 120;
-    var xwidth = width-60;
-
-    for(var i = 0;i < menuNames.length;i++) {
-      menu[i] = createButton(menuNames[i],xoffset,i*yoffset+offset);
-      menu[i].index = i;
-      menu[i].w = xwidth;
-      menu[i].h = yoffset - 15;
-      menu[i].setStyle(buttonstyleMenu);
-  
-      menu[i].onPress = function() 
-      {
-        if(this.index == 0) {
-          me.sceneManager.showScene(buttonsettings);
-        }
-        if(this.index == 1) {
-          me.sceneManager.showScene(slidersettings);
-        }
-        if(this.index == 2) {
-          me.sceneManager.showScene(colourcontrol);
-        }                  
-      }      
-    }
-  }
-  
-  this.enter = function()
-  {   
-    gui.show();
-  }
-
-  this.exit = function()
-  {
-    gui.hide();
-  }
-
-  this.draw = function()
-  {
-    background('#aaaaaa');
-
-    push();
-    showHeader(false);
-
-
-// // function setup() {
+  // // function setup() {
 // //   createCanvas(400, 400);
 // // }
 
@@ -103,11 +34,11 @@ ml5 Example
 PoseNet example using p5.js
 === */
 
-let video;
-let poseNet;
-let poses = [];
+var video;
+var poseNet;
+var poses = [];
 
-function setup() {
+this.setup = function(){
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
@@ -123,11 +54,11 @@ function setup() {
   video.hide();
 }
 
-function modelReady() {
+this.modelReady = function() {
   select("#status").html("Model Loaded");
 }
 
-function draw() {
+this.draw = function() {
   image(video, 0, 0, width, height);
   filter(GRAY)
 
@@ -137,7 +68,7 @@ function draw() {
 }
 
 // A function to draw ellipses over the detected keypoints
-function drawKeypoints() {
+this.drawKeypoints = function() {
   // Loop through all the poses detected
   for (let i = 0; i < poses.length; i += 1) {
     // For each pose detected, loop through all the keypoints
@@ -157,7 +88,7 @@ function drawKeypoints() {
 }
 
 // A function to draw the skeletons
-function drawSkeleton() {
+this.drawSkeleton = function() {
   // Loop through all the skeletons detected
   for (let i = 0; i < poses.length; i += 1) {
     const skeleton = poses[i].skeleton;
@@ -177,12 +108,15 @@ function drawSkeleton() {
 
 
 
-
-    
-    gui.draw();
-
-    pop();
-
   }
+  this.enter = function()
+  {   
+    gui.show();
+  }
+  
+  this.exit = function()
+  {
+    gui.hide();
+    print("continue exercises");
  
-}
+  }
