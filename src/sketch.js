@@ -77,6 +77,7 @@ function setupHeaderButtons() {
 }
 
 function showHeader(showbuttons) {
+
   translate(0,offsetY);
 
   textFont(fontGotham);
@@ -116,14 +117,15 @@ function setup() {
 
   mgr = new SceneManager();
   mgr.wire();
-  // mgr.addScene(mainmenu);
+   
   // mgr.addScene(slidersettings);
   // mgr.addScene(buttonsettings);
   // mgr.addScene(colourcontrol);
   mgr.addScene(login);
-  // mgr.addScene(posenet);
-  // mgr.addScene(homepage);
+  mgr.addScene(posenet);
+  mgr.addScene(homepage);
   // mgr.addScene(calendar);
+  // mgr.addScene(mainmenu);
   mgr.showNextScene();
 }
 
