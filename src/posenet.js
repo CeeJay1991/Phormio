@@ -39,7 +39,7 @@ var poseNet;
 var poses = [];
 
 this.setup = function(){
-  createCanvas(640, 480);
+  createCanvas(440, 750);
   video = createCapture(VIDEO);
   video.size(width, height);
 
