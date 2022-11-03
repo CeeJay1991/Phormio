@@ -20,35 +20,35 @@ this.setup = function()
   // b = fill (100)
 
   textinput1 = createInput('');
-  textinput1.style('font-size', '50px');
+  textinput1.style('font-size', '20px');
   textinput1.position(width/7, height/4);
   textinput1.size(width/3.5, height/14);
   textinput1.value('First name');
   //textinput.input(myInputEvent);
   
   textinput2 = createInput('');
-  textinput2.style('font-size', '50px');
+  textinput2.style('font-size', '20px');
   textinput2.position(width/1.9, height/4);
   textinput2.size(width/3.5, height/14);
   textinput2.value('Last name');
   //textinput.input(myInputEvent);
   
   textinput3 = createInput('');
-  textinput3.style('font-size', '50px');
+  textinput3.style('font-size', '20px');
   textinput3.position(width/7, height/2.7);
   textinput3.size(width/1.5,height/14);
   textinput3.value('Username');
   // textinput3.input(myInputEvent);
   
   textinput4 = createInput('');
-  textinput4.style('font-size', '50px');
+  textinput4.style('font-size', '20px');
   textinput4.position(width/7, height/2.05);
   textinput4.size(width/1.5,height/14);
   textinput4.value('Email Address');
   // textinput.input(myInputEvent);
   
   textinput5 = createInput('');
-  textinput5.style('font-size', '50px');
+  textinput5.style('font-size', '20px');
   textinput5.position(width/7, height/1.65);
   textinput5.size(width/1.5,height/14);
   textinput5.value('Password');
