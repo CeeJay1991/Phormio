@@ -39,7 +39,7 @@ var poseNet;
 var poses = [];
 
 this.setup = function(){
-  createCanvas(750, 440);
+  createCanvas(740, 440 );
   video = createCapture(VIDEO);
   video.size(width, height);
 
@@ -59,7 +59,7 @@ this.modelReady = function() {
 }
 
 this.draw = function() {
-  image(video, 0, 0, width, height);
+  image(video, 0, 0, width/1.1, height/1.1);
   filter(GRAY)
 
   // We can call both functions to draw all keypoints and the skeletons
